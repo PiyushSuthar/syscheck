@@ -1,0 +1,31 @@
+{
+  "short_name": "PhoneTest",
+  "name": "PhoneTest: Test SomeThing",
+  "description": "Testing is easier than Fasting",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/syscheck/?source=pwa",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/syscheck/",
+  "theme_color": "#3367D6",
+  "shortcuts": [
+    {
+      "name": "See Your Network Type",
+      "short_name": "NetWork Type",
+      "description": "View Network Type for your phone",
+      "url": "/syscheck/?source=pwa"
+    },
+    {
+      "name": "Check TouchPoints of your Phonee",
+      "short_name": "TouchPoints",
+      "description": "View TouchPoinst of your Phone",
+      "url": "/syscheck/?source=pwa"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <div class="root">
+      <div class="network">
+        <p>You Have</p>
+        <h1 id="networkType">Checking</h1>
+        <p>network</p>
+      </div>
+
+      <div class="network">
+        <p>You Have</p>
+        <h1 id="touchPoints">Checking</h1>
+        <p>TouchPoints</p>
+      </div>
+
+      <div class="network">
+        <p>You are</p>
+        <h1 id="network">Checking</h1>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+    <script type="module">
+      import "https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate";
+
+      const el = document.createElement("pwa-update");
+      document.body.appendChild(el);
+    </script>
+  </body>
+</html>
