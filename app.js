@@ -2,6 +2,8 @@
 var networkType = document.getElementById("networkType");
 var touchPoints = document.getElementById("touchPoints");
 var network = document.getElementById("network");
+var ChargingLevel = document.getElementById("chargingIndicator");
+var charging = document.getElementById("charging");
 
 //Getting Information from System
 
@@ -20,3 +22,21 @@ setInterval(() => {
     network.innerText = "Offline";
   }
 }, 2000);
+
+// # Getting if the device is chargin and It's percentage
+navigator.getBattery().then(function(battery) {
+  battery.addEventListener("levelchange", function() {
+    updateLevelInfo();
+  });
+  updateLevelInfo();
+  function updateLevelInfo() {
+    var level = battery.level * 100 + "%";
+    ChargingLevel.style.width = level;
+    ChargingLevel.innerText = level;
+  }
+  if (battery.charging) {
+    charging.innerText = "Charging";
+  } else {
+    charging.innerText = "Not Charging";
+  }
+});

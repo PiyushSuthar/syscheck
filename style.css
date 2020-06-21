@@ -3,11 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  height: 100%;
-}
+
 body {
-  height: 100%;
   font-family: sans-serif;
 }
 .root {
@@ -27,4 +24,22 @@ body {
   /* border: 1px solid rgb(179, 179, 179); */
   border-radius: 10px;
   box-shadow: 0 5px 10px 0 rgb(228, 228, 228);
+}
+
+#ChargingLevel {
+  min-width: 100px;
+  min-height: 40px;
+  border: solid 2px black;
+  color: rgb(255, 255, 255);
+}
+
+#ChargingLevel div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 500;
+  min-height: 40px;
+  background-color: rgb(21, 221, 21);
 }
