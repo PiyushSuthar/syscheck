@@ -24,8 +24,8 @@ setInterval(() => {
 }, 2000);
 
 // # Getting if the device is chargin and It's percentage
-navigator.getBattery().then(function(battery) {
-  battery.addEventListener("levelchange", function() {
+navigator.getBattery().then(function (battery) {
+  battery.addEventListener("levelchange", function () {
     updateLevelInfo();
   });
   updateLevelInfo();
@@ -40,3 +40,23 @@ navigator.getBattery().then(function(battery) {
     charging.innerText = "Not Charging";
   }
 });
+
+const parsedUrl = new URL(window.location);
+const url = parsedUrl.searchParams.get("url");
+const NativeShareEl = document.getElementById("nativeShareData");
+
+if (url) {
+  let parsedName = "",
+    parsedParamUrl = "",
+    parsedText = "";
+
+  parsedName = parsedUrl.searchParams.get("name");
+  parsedParamUrl = parsedUrl.searchParams.get("url");
+  parsedText = parsedUrl.searchParams.get("text");
+
+  NativeShareEl.innerHTML = `<div>
+    <div>name: ${parsedName}</div>
+    <div>text: ${parsedText}</div>
+    <div>url: ${parsedParamUrl}</div>
+  </div>`;
+}
